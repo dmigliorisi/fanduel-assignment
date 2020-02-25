@@ -18,7 +18,8 @@ const setupRandom = () => {
 
     const props = {
         players: getRandomPlayers(mockResponse.players, randOptionsCount),
-        optionsCount: randOptionsCount
+        optionsCount: randOptionsCount,
+        teams: mockResponse.teams
     };
 
     // wrapper instance around rendered output

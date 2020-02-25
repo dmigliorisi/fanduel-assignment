@@ -1,4 +1,4 @@
-import {Button, Dialog, DialogActions, DialogTitle} from "@material-ui/core";
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
 import React from "react";
 
 interface ResultDialogProps {
@@ -7,6 +7,7 @@ interface ResultDialogProps {
     onContinueClick: () => void;
     isDialogOpen: boolean;
     title: string;
+    body: JSX.Element;
 }
 
 export const ResultDialog = (props: ResultDialogProps) => {
@@ -18,6 +19,7 @@ export const ResultDialog = (props: ResultDialogProps) => {
     return (
         <Dialog open={props.isDialogOpen} onClose={onCloseDialog}>
             <DialogTitle>{props.title}</DialogTitle>
+            <DialogContent>{props.body}</DialogContent>
             <DialogActions>
                 {
                     props.correctGuesses === 10 ?

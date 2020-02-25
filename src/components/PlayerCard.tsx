@@ -1,10 +1,11 @@
 import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia} from "@material-ui/core";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {Player} from "../definitions/commonTypes";
+import {Player, Team} from "../definitions/commonTypes";
 
 interface PlayerCardProps {
     player: Player;
+    team: Team;
     handleSelectPlayer: (fppg: number) => void;
 }
 
@@ -35,7 +36,7 @@ export const PlayerCard = (props: PlayerCardProps) => {
                     </span>
                     <br/>
                     <span>
-                        FPPG: ???
+                        {props.team.full_name}
                     </span>
                 </CardContent>
             </CardActionArea>

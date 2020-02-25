@@ -9,6 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 const setupRandom = () => {
     const props = {
         player: mockResponse.players[0],
+        team: mockResponse.teams[0]
     };
 
     // wrapper instance around rendered output
@@ -31,6 +32,6 @@ describe('<PlayerCard>', ()=> {
         expect(enzymeWrapper.find(CardMedia)).toHaveLength(1);
         expect(enzymeWrapper.find(CardContent)).toHaveLength(1);
         expect(enzymeWrapper.find(CardContent).find("span").first().text()).toMatch(`${props.player.first_name} ${props.player.last_name}`);
-        expect(enzymeWrapper.find(CardContent).find("span").last().text()).toMatch(`FPPG: ???`);
+        expect(enzymeWrapper.find(CardContent).find("span").last().text()).toMatch(`${props.team.full_name}`);
     });
 })

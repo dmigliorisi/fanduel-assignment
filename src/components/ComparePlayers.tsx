@@ -1,12 +1,13 @@
 import {Grid} from "@material-ui/core";
 import React from "react";
-import {Player} from "../definitions/commonTypes";
+import {Player, Team} from "../definitions/commonTypes";
 import {PlayerCard} from "./PlayerCard";
 
 interface ComparePlayersProps {
+    onGuess: (isCorrect: boolean) => void;
     optionsCount: number;
     players: Array<Player>;
-    onGuess: (isCorrect: boolean) => void;
+    teams: Array<Team>;
 }
 
 
@@ -25,6 +26,8 @@ export const ComparePlayers = (props: ComparePlayersProps) => {
         props.onGuess(selectedPlayerFppg === mostFppg[0])
     };
 
+    const getPlayersTeam = (player: Player): Team => props.teams.filter((team: Team) => team.id === player.team._members[0])[0]
+
     return (
         <React.Fragment>
             {
@@ -38,6 +41,7 @@ export const ComparePlayers = (props: ComparePlayersProps) => {
                         <PlayerCard
                             handleSelectPlayer={handleSelectPlayer}
                             player={player}
+                            team={getPlayersTeam(player)}
                         />
                     </Grid>
                 )
