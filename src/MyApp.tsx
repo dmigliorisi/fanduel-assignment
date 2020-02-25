@@ -51,7 +51,6 @@ class MyApp extends React.Component<any, AppState> {
         });
     }
 
-
     /**
      * Gets the title for the result dialog
      */

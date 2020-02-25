@@ -5,7 +5,7 @@ import {mockResponse} from "../__mock__";
 import {ComparePlayers} from "./ComparePlayers";
 import {PlayerCard} from "./PlayerCard";
 
-const setupRandom = () => {
+const setup = () => {
 
     // Magic number 5 is arbitrary defined. It was chosen to limit the max options to 1/5 of the total players
     let maxOptions = mockResponse.players.length / 5;
@@ -35,7 +35,7 @@ const setupRandom = () => {
 describe('<ComparePlayers>', ()=> {
 
     // Setup wrapper and props
-    const {enzymeWrapper, props} = setupRandom();
+    const {enzymeWrapper, props} = setup();
 
     it('renders correct num of cards', () => {
         expect(enzymeWrapper.find(PlayerCard)).toHaveLength(props.optionsCount);

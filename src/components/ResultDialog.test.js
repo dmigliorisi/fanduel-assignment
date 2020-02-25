@@ -3,7 +3,7 @@ import {shallow} from "enzyme";
 import {ResultDialog} from "./ResultDialog";
 import {Button, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
 
-const setupRandom = (mockProps) => {
+const setup = (mockProps) => {
     const props = {...mockProps};
 
     // wrapper instance around rendered output
@@ -27,7 +27,7 @@ describe('<ResultDialog>', ()=> {
 
     it('renders player dialog correctly with 10 correct guesses', () => {
         // Setup wrapper and props
-        const {enzymeWrapper, props} = setupRandom(mockProps);
+        const {enzymeWrapper, props} = setup(mockProps);
 
         // Test that the Title exists and is rendered correctly
         expect(enzymeWrapper.find(DialogTitle)).toHaveLength(1);
@@ -46,7 +46,7 @@ describe('<ResultDialog>', ()=> {
     it('renders player dialog correctly with fewer than 10 correct guesses', () => {
         // Setup wrapper and props
         mockProps.correctGuesses = 9;
-        const {enzymeWrapper, props} = setupRandom(mockProps);
+        const {enzymeWrapper, props} = setup(mockProps);
 
         // Test that the button text is correct
         expect(enzymeWrapper.find(DialogActions).find(Button).text()).toMatch("Continue");

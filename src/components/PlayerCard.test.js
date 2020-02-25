@@ -6,7 +6,7 @@ import {Card} from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 
-const setupRandom = () => {
+const setup = () => {
     const props = {
         player: mockResponse.players[0],
         team: mockResponse.teams[0]
@@ -25,7 +25,7 @@ const setupRandom = () => {
 describe('<PlayerCard>', ()=> {
 
     // Setup wrapper and props
-    const {enzymeWrapper, props} = setupRandom();
+    const {enzymeWrapper, props} = setup();
 
     it('renders player card correctly', () => {
         expect(enzymeWrapper.find(Card)).toHaveLength(1);
