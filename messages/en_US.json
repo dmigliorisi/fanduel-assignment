@@ -1,0 +1,10 @@
+{
+  'this.is.a.test': {
+    id: "this.is.a.test",
+    defaultMessage: "This is in english"
+  },
+  "this.is.anotherTest": {
+    id: "this.is.anotherTest",
+    defaultMessage: "This is also English"
+  }
+}
