@@ -46,6 +46,7 @@ jobs:
         cp -f source/en-us.json destination/messages
         cd destination
                 
+        echo ">>> DEBUG <<<<"
         if ! git diff-index --quiet HEAD --; then
           echo ">>> Creating PR"
           git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/&GITHUB_USER/fanduel-assignment.git
