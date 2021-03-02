@@ -47,11 +47,10 @@ jobs:
         cd destination
                 
         echo ">>> DEBUG <<<<"
-        if ! git diff-index --quiet HEAD --; then
-          echo ">>> Creating PR"
-          git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/&GITHUB_USER/fanduel-assignment.git
-          git add .
-          git commit -m "Update language files - $SHORT_DATE" --signoff
-          git push --set-upstream origin $BRANCH_STAMP
-          gh pr create --title "Language file bump" --body "This is just a test"
-        fi
+
+        echo ">>> Creating PR"
+        git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/&GITHUB_USER/fanduel-assignment.git
+        git add .
+        git commit -m "Update language files - $SHORT_DATE" --signoff
+        git push --set-upstream origin $BRANCH_STAMP
+        gh pr create --title "Language file bump" --body "This is just a test"
