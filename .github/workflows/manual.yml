@@ -11,8 +11,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "createPR"
-  createPR:
+  # This workflow contains a single job called "create_pr"
+  create_pr:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -21,9 +21,15 @@ jobs:
     # Runs a single command using the runners shell
     - name: Copy the file to lang repo
       run: 
-        git clone https://github.com/fanduel/dfs-languages.git target
-        rm target
-        copy README.md target
-        git add target
-        git commit -m "This is a test"
-        git push target globo-poc
+        export GITHUB_USER=dmigliorisi
+        git config --global user.email "danny.migliorisi@fanduel.com"
+        git config --global user.name "FD L10n Connector
+
+        git clone https://github.com/FanDuel/dfs-languages.git --depth 1
+        git clone -o upstream https://github.com/dmigliorisi/fanduel-assignment
+        
+        cd fanduel-assignment
+        git remote add origin https://github.com/dmigliorisi/fanduel-assignment
+        
+        
+        
