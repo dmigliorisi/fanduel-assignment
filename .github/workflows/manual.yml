@@ -32,9 +32,3 @@ jobs:
         git config --global user.name "Connector";
 
         git clone -o upstream $SOURCE_REPO source;
-        cd origin
-        git remote add origin $SOURCE_REPO;
-
-        git checkout -b $BRANCH_STAMP;
-
-
