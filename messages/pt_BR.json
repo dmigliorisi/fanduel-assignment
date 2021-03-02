@@ -1,0 +1,6 @@
+{
+  "new.string": {
+    defaultMessage: "This is a new Portuguese string",
+    id: "new.string"
+  }
+}
