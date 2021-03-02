@@ -36,8 +36,8 @@ jobs:
 
         git clone $DESTINATION_REPO destination --depth 1
         git clone -o upstream $SOURCE_REPO source
-        ls -l
-        cd origin
+
+        cd source
         git remote add origin $SOURCE_REPO
 
         git checkout -b $BRANCH_STAMP
