@@ -9,6 +9,6 @@
   },
   "this.is.aThirdTest": {
     id: "this.is.aThirdTest",
-    defaultMessage: "Is this English?"
+    defaultMessage: "This English?"
   }
 }
