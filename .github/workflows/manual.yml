@@ -21,4 +21,5 @@ jobs:
     # Runs a single command using the runners shell
     - name: Copy the file to lang repo
       run: 
-        git config --global user.email "danny.migliorisi@fanduel.com"
+        git config --global user.email "danny.migliorisi@fanduel.com";
+        git config --global user.name "Connector";
