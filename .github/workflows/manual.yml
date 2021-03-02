@@ -36,6 +36,7 @@ jobs:
 
         git clone $DESTINATION_REPO destination --depth 1
         git clone -o upstream $SOURCE_REPO source
+        ls -l
         cd origin
         git remote add origin $SOURCE_REPO
 
