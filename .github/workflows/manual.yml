@@ -31,10 +31,10 @@ jobs:
         SOURCE_REPO="http://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/$GITHUB_USER/fanduel-assignment.git"
         DESTINATION_REPO="https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/fanduel/dfs-languages.git"
         
-        git config --global user.email "danny.migliorisi@fanduel.com"
+        git config --global user.email "dmigliorisi@gmail.com"
         git config --global user.name "Connector"
 
-        git clone $DESTINATION_REPO destination --depth 1
+        git clone $DESTINATION_REPO destination
         git clone -o upstream $SOURCE_REPO source
 
         cd source
@@ -45,9 +45,7 @@ jobs:
         cd ..
         cp -f source/en-us.json destination/messages
         cd source
-        
-        git update-index -q --refresh
-        
+                
         if ! git diff-index --quiet HEAD --; then
           git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/&GITHUB_USER/fanduel-assignment.git
           git add .
