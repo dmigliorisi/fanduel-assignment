@@ -53,5 +53,5 @@ jobs:
           git add .
           git commit -m "Update language files - $SHORT_DATE" --signoff
           git push --set-upstream origin $BRANCH_STAMP
-          hub pull-request --no-edit
+          gh pr create --title "Language file bump" --body "This is just a test"
         fi
