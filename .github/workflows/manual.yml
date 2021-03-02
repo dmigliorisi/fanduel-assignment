@@ -28,8 +28,5 @@ jobs:
         git clone https://github.com/FanDuel/dfs-languages.git --depth 1
         git clone -o upstream https://github.com/dmigliorisi/fanduel-assignment
         
-        cd fanduel-assignment
-        git remote add origin https://github.com/dmigliorisi/fanduel-assignment
-        
         
         
