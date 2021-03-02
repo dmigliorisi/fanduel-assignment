@@ -18,6 +18,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Setup Hub
+      uses: Geertvdc/setup-hub@v1.0.0
     - uses: workflows/checkout@v1
     - name: Install hub
       uses: geertvdc/setup-hub@master
