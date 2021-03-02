@@ -28,8 +28,8 @@ jobs:
         export GITHUB_USER=dmigliorisi
         export GITHUB_TOKEN=${{ secrets.IWA_TOKEN }}
         
-        BRANCH_STAMP="$(date +"%Y%m%d%H%M%S")"
         SHORT_DATE="$(date +"%Y-%m-%d")"
+        BRANCH_STAMP="i18n-${SHORT_DATE}"
         
         SOURCE_REPO="http://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/$GITHUB_USER/fanduel-assignment.git"
         DESTINATION_REPO="https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/fanduel/dfs-languages.git"
