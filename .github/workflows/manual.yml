@@ -41,7 +41,7 @@ jobs:
         git checkout -b $BRANCH_STAMP
 
         cd ..
-        cp -f source/en_US.json destination/messages/en_US.json
+        cp -f source/en_US.json destination/messages
         cd destination
                 
         git add .
