@@ -22,10 +22,3 @@ jobs:
     - name: Copy the file to lang repo
       run: 
         git config --global user.email "danny.migliorisi@fanduel.com"
-        git config --global user.name "FD L10n Connector"
-
-        git clone https://github.com/FanDuel/dfs-languages.git --depth 1
-        git clone -o upstream https://github.com/dmigliorisi/fanduel-assignment
-        
-        
-        
