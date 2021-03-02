@@ -38,16 +38,3 @@ jobs:
 
         git checkout -b $BRANCH_STAMP;
 
-        cd ..;
-        cp -f source/en-us.json destination/messages;
-        cd source;
-        
-        git update-index -q --refresh;
-        
-        if ! git diff-index --quiet HEAD --; then
-          git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/&GITHUB_USER/fanduel-assignment.git;
-          git add .;
-          git commit -m "Update language files - $SHORT_DATE" --signoff;
-          git push --set-upstream origin $BRANCH_STAMP
-          hub pull-request --no-edit
-        fi
