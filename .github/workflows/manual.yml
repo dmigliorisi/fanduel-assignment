@@ -5,8 +5,9 @@ name: Create DFS Languages Update PR
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  schedule:
-    - cron: '0 0 * * 1,2,3,4,5'
+  push:
+    paths:
+    - 'en_US.json'
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
