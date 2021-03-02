@@ -49,7 +49,7 @@ jobs:
         echo ">>> DEBUG <<<<"
 
         echo ">>> Creating PR"
-        git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/&GITHUB_USER/fanduel-assignment.git
+        git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/fanduel-assignment.git
         git add .
         git commit -m "Update language files - $SHORT_DATE" --signoff
         git push --set-upstream origin $BRANCH_STAMP
