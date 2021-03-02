@@ -6,6 +6,8 @@ name: Create DFS Languages Update PR
 # or API.
 on:
   push:
+    branches:
+    - main
     paths:
     - 'en_US.json'
   workflow_dispatch:
