@@ -6,5 +6,9 @@
   "this.is.anotherTest": {
     id: "this.is.anotherTest",
     defaultMessage: "This is also English"
+  },
+  "this.is.aThirdTest": {
+    id: "this.is.aThirdTest",
+    defaultMessage: "Is this English?"
   }
 }
