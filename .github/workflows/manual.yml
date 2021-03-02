@@ -18,15 +18,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: Geertvdc/setup-hub@v1.0.0
     - uses: actions/checkout@v2
-    - name: run hub commands
-      env:
-        GITHUB_USER: ${{ secrets.GITHUB_USER }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      run: |
-        hub release
     # Runs a single command using the runners shell
     - name: Copy the file to lang repo
       run: |
@@ -36,8 +28,8 @@ jobs:
         BRANCH_STAMP="$(date +"%Y%m%d%H%M%S")"
         SHORT_DATE="$(date +"%Y-%m-%d")"
         
-        SOURCE_REPO="http://github.com/$GITHUB_USER/fanduel-assignment.git"
-        DESTINATION_REPO="https://github.com/fanduel/dfs-languages.git"
+        SOURCE_REPO="http://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/$GITHUB_USER/fanduel-assignment.git"
+        DESTINATION_REPO="https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/fanduel/dfs-languages.git"
         
         git config --global user.email "danny.migliorisi@fanduel.com"
         git config --global user.name "Connector"
